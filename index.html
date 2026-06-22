@@ -446,7 +446,7 @@
   if(sc&&dt.length){sc.addEventListener('scroll',function(){var w=sc.querySelector('.testimonio-card').offsetWidth+14;var i=Math.round(sc.scrollLeft/w);dt.forEach(function(d,j){d.classList.toggle('activo',j===i)})},{passive:true})}
 
   var autoTimer=null;
-  function startAuto(){if(!sc)return;stopAuto();autoTimer=setInterval(function(){var card=sc.querySelector('.testimonio-card');if(!card)return;var paso=card.offsetWidth+14;var max=sc.scrollWidth-sc.clientWidth;if(sc.scrollLeft>=max-5){sc.scrollTo({left:0,behavior:'smooth'})}else{sc.scrollBy({left:paso,behavior:'smooth'})}},3500)}
+  function startAuto(){if(!sc)return;stopAuto();autoTimer=setInterval(function(){var card=sc.querySelector('.testimonio-card');if(!card)return;var paso=card.offsetWidth+14;var max=sc.scrollWidth-sc.clientWidth;if(sc.scrollLeft>=max-5){sc.scrollTo({left:0,behavior:'smooth'})}else{sc.scrollBy({left:paso,behavior:'smooth'})}},2000)}
   function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null}}
   if(sc){startAuto();sc.addEventListener('touchstart',function(){stopAuto()},{passive:true});sc.addEventListener('mousedown',function(){stopAuto()});var resumeTimer=null;sc.addEventListener('touchend',function(){clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,5000)},{passive:true});sc.addEventListener('mouseup',function(){clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,5000)});sc.addEventListener('scroll',function(){stopAuto();clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,5000)},{passive:true})}
 
