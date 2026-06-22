@@ -455,7 +455,7 @@
 
   function val(){var c=form.querySelectorAll('[required]');for(var i=0;i<c.length;i++){var f=c[i];if(!f.value||(f.type==='checkbox'&&!f.checked)){if(f.type==='checkbox')return'Debes aceptar la política de privacidad.';if(f.tagName==='SELECT')return'Selecciona un '+f.name+'.';return'Completa: '+f.placeholder.replace('Nombre del ','').trim()+'.'}}var t=form.querySelector('[name="phone"]');if(t&&!/^[0-9+\s()-]{9,20}$/.test(t.value.trim()))return'Introduce un teléfono válido (mínimo 9 dígitos).';return null}
   function err(m){errorMsg.textContent=m;errorMsg.classList.add('visible');btnSubmit.disabled=false;btnSubmit.classList.remove('enviando');setTimeout(function(){errorMsg.classList.remove('visible')},5000)}
-  function ok(){formSection.style.display='none';exitoOverlay.classList.add('visible');setTimeout(function(){window.location.href='https://informaticaaluche.github.io/cursos-de-verano-26/gracias.html'},3500)}
+  function ok(){formSection.style.display='none';exitoOverlay.classList.add('visible');setTimeout(function(){window.location.href='https://informaticaaluche.github.io/cursos-de-verano-26/gracias.html'},2000)}
   form.addEventListener('submit',function(e){e.preventDefault();errorMsg.classList.remove('visible');var er=val();if(er){err(er);return}btnSubmit.disabled=true;btnSubmit.classList.add('enviando');fetch('https://api.staticforms.xyz/submit',{method:'POST',body:new FormData(form)}).then(function(r){if(r.ok)return r.json();throw new Error('Error')}).then(function(d){if(d.success)ok();else throw new Error(d.message||'Error')}).catch(function(){ok()})});
 })();
 </script>
