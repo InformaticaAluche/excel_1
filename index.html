@@ -299,7 +299,7 @@
     </div>
   </div>
   </div>
-  <div class="testimonios-indicadores" id="testimoniosIndicadores"><span class="activo"></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="testimonios-indicadores" id="testimoniosIndicadores"><span class="activo"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <div class="contenedor-interno fade-in" style="margin-top:18px"><a class="boton-cta rojo" href="#formulario">👉 Quiero resultados así</a></div>
 </div>
 
@@ -455,8 +455,8 @@
   function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null}}
   if(sc){startAuto();sc.addEventListener('touchstart',function(){stopAuto()},{passive:true});sc.addEventListener('mousedown',function(){stopAuto()});var resumeTimer=null;sc.addEventListener('touchend',function(){clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,5000)},{passive:true});sc.addEventListener('mouseup',function(){clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,5000)});sc.addEventListener('scroll',function(){stopAuto();clearTimeout(resumeTimer);resumeTimer=setTimeout(startAuto,5000)},{passive:true})}
 
-  var tE=document.getElementById('toastSocial'),tM=['👤 Patricia acaba de reservar','⭐ Última valoración: 5 estrellas','👤 Javier se ha apuntado hace 5 min','⭐ 4.9 de media en 47 opiniones','👤 Carmen reservó hace un momento'];
-  setTimeout(function(){if(tE&&'localStorage' in window&&!localStorage.getItem('toast_v6')){tE.textContent=tM[Math.floor(Math.random()*tM.length)];tE.classList.add('mostrar');localStorage.setItem('toast_v6','1');setTimeout(function(){tE.classList.remove('mostrar')},4000)}},8000);
+  var tE=document.getElementById('toastSocial'),tM=['👤 Sergio acaba de reservar','⭐ Última valoración: 5 estrellas','👤 Tania se ha apuntado hace 3 min','⭐ 4.9 de media en 47 opiniones','👤 Elena reservó hace un momento];
+  setTimeout(function(){if(tE&&'localStorage' in window&&!localStorage.getItem('toast_v7')){tE.textContent=tM[Math.floor(Math.random()*tM.length)];tE.classList.add('mostrar');localStorage.setItem('toast_v7','1');setTimeout(function(){tE.classList.remove('mostrar')},4000)}},8000);
 
   function val(){var c=form.querySelectorAll('[required]');for(var i=0;i<c.length;i++){var f=c[i];if(!f.value||(f.type==='checkbox'&&!f.checked)){if(f.type==='checkbox')return'Debes aceptar la política de privacidad.';if(f.tagName==='SELECT')return'Selecciona un '+f.name+'.';return'Completa: '+f.placeholder.replace('Nombre del ','').trim()+'.'}}var t=form.querySelector('[name="phone"]');if(t&&!/^[0-9+\s()-]{9,20}$/.test(t.value.trim()))return'Introduce un teléfono válido (mínimo 9 dígitos).';return null}
   function err(m){errorMsg.textContent=m;errorMsg.classList.add('visible');btnSubmit.disabled=false;btnSubmit.classList.remove('enviando');setTimeout(function(){errorMsg.classList.remove('visible')},5000)}
