@@ -317,7 +317,144 @@
     padding: 60px 20px !important;
   }
 }
+
+/* ==========================================================================
+   BLOQUE INTEGRAL DE CIERRE (PEGAR ABAJO DEL TODO EN TU CSS)
+   ========================================================================== */
+
+/* --- A) AJUSTES PARA MÓVIL Y BASE GENERAL --- */
+
+/* 1. Unificamos todos los botones a un ancho simétrico máximo */
+.boton-cta {
+  width: 100% !important;
+  max-width: 360px !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2. Despegamos la barra de urgencia de los bordes del teléfono */
+.urgencia-bar {
+  display: block !important;
+  width: 90% !important;
+  max-width: 750px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  padding: 12px 20px !important;
+  border-radius: 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Forzamos la última sección a gris claro en móvil y PC (Secuencia Blanco-Gris) */
+.seccion-oscura {
+  background-color: #f5f7fa !important;
+  padding: 50px 20px !important;
+}
+.seccion-oscura h2 {
+  color: #1a1a1a !important;
+  max-width: 750px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.seccion-oscura p {
+  color: #4a5568 !important;
+  max-width: 750px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* --- B) AJUSTES EXCLUSIVOS PARA PANTALLAS GRANDES (PC) --- */
+@media(min-width:700px) {
   
+  /* Activamos el marco recogido con los laterales gris compacto (#c8c9cc) */
+  html {
+    background-color: #c8c9cc !important;
+  }
+  body {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15) !important;
+    max-width: 1024px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Encapsulamos el esqueleto principal en PC */
+  header, .seccion-blanca, .seccion-gris, .seccion-oscura, footer {
+    max-width: 1024px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+
+  /* Ponemos las 3 tarjetas de los cursos en fila (Evita que se queden en una columna y se recorten) */
+  .tarjetas {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px !important;
+    max-width: 1024px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+  }
+  .tarjeta {
+    flex: 1 !important;
+    margin-bottom: 0 !important;
+  }
+  .tarjeta img {
+    height: 180px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Los dos botones de abajo en paralelo (Dúo) */
+  .cta-duo {
+    max-width: 550px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    justify-content: center !important;
+  }
+  .cta-duo .boton-cta {
+    flex: 1 !important;
+    max-width: 260px !important;
+    margin: 0 !important;
+  }
+
+  /* Reajustes de aire y espaciados en PC */
+  .urgencia-bar {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+  }
+  .seccion-oscura {
+    padding: 60px 20px !important;
+  }
+
+  /* Distribución limpia de testimonios en cuadrícula de PC */
+  .testimonios-wrap {
+    max-width: 1024px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+  }
+  .testimonios-wrap::after {
+    display: none !important;
+  }
+  .testimonios-scroll {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 16px !important;
+    overflow-x: visible !important;
+    padding: 20px 0 !important;
+  }
+  .testimonio-card {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+   
   </style>
 </head>
 <body>
