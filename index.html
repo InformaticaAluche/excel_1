@@ -230,7 +230,7 @@
       }
       body {
         background-color: #ffffff;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.15); /* Subimos un pelín la sombra para que fusione genial con el gris más oscuro */
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
         max-width: 1024px;
         margin: 0 auto;
       }
@@ -241,6 +241,12 @@
         margin-left: auto !important;
         margin-right: auto !important;
         width: 100%;
+      }
+
+      /* CORRECCIÓN DE SECUENCIA: Evita que el footer y la sección oscura se fusionen de golpe */
+      footer {
+        background-color: #f5f7fa !important; /* Pasamos el footer a un gris muy limpio para que no sea otro bloque negro pegado */
+        border-top: 1px solid #e1e2e6;
       }
 
       /* Ajustamos la barra de plazas limitadas (urgencia) para que quede equilibrada */
