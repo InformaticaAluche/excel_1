@@ -223,158 +223,79 @@
       .footer-logo{width:180px;height:100px;padding:8px}
     } */
 
-@media(min-width:700px){
-      /* Efecto recogido con el marco gris compacto elegido (#c8c9cc) */
-      html {
-        background-color: #c8c9cc;
-      }
-      body {
-        background-color: #ffffff;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
-        max-width: 1024px;
-        margin: 0 auto;
-      }
+/* ==========================================================================
+   CÓDIGO DEFINITIVO DE AJUSTES: BOTONES, URGENCIA Y SECCIÓN GRIS FINAL
+   ========================================================================== */
 
-      /* 1. Encapsulamos las secciones principales, el header y el footer en PC */
-      header, .seccion-blanca, .seccion-gris, .seccion-oscura, footer {
-        max-width: 1024px;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: 100%;
-      }
+/* 1. COMPORTAMIENTO GENERAL (Móvil primero) */
 
-      /* Forzamos a que esta sección final sea GRIS en PC y que sus textos sean oscuros */
-      .seccion-oscura {
-        background-color: #f5f7fa !important;
-        padding: 60px 20px !important;
-      }
-      .seccion-oscura h2 {
-        color: #1a1a1a !important;
-        max-width: 750px;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
-      .seccion-oscura p {
-        color: #4a5568 !important;
-        max-width: 750px;
-        margin-left: auto !important;
-        margin-right: auto !important;
-      }
-
-      /* Mantenemos el footer en su color oscuro nativo */
-      footer {
-        padding-bottom: 40px;
-      }
-
-      /* Ajustamos la barra de plazas limitadas (urgencia) para que quede equilibrada */
-      .urgencia-bar {
-        max-width: 750px;
-        margin: 20px auto !important;
-        border-radius: 12px;
-      }
-
-      /* UNIFICACIÓN DE BOTONES EN PC: Forzamos el ancho exacto e idéntico */
-      .boton-cta {
-        max-width: 360px !important; /* <--- Candado de 360px para todos los botones sueltos en PC */
-        width: 100% !important;
-      }
-
-      /* Contenedor de los dos botones de abajo (Dúo) */
-      .cta-duo {
-        max-width: 550px;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-        justify-content: center;
-      }
-      .cta-duo .boton-cta {
-        flex: 1;
-        max-width: 260px !important; /* En formato dúo se adaptan para ir en la misma línea sin romperse */
-        margin: 0 !important;
-      }
-
-      /* 2. Arreglo de testimonios para PC (en cuadrícula limpia) */
-      .testimonios-wrap {
-        max-width: 1024px;
-        margin: 0 auto !important;
-        padding: 0 20px;
-      }
-      .testimonios-wrap::after {
-        display: none;
-      }
-      .testimonios-scroll {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 16px;
-        overflow-x: visible;
-        padding: 20px 0;
-      }
-      .testimonio-card {
-        max-width: 100%;
-        min-width: 0;
-      }
-
-      /* 3. Las 3 tarjetas de los cursos en fila */
-      .tarjetas{
-        flex-direction:row;
-        max-width: 1024px;
-        margin: 0 auto;
-      }
-      .tarjeta{flex:1}
-      .tarjeta img{height:180px}
-      
-      /* 4. Textos y formularios acotados */
-      .contenedor-interno {
-        max-width: 750px;
-        margin: 0 auto;
-      }
-
-      /* 5. Contenido del encabezado centrado */
-      header {
-        padding: 50px 20px;
-      }
-      header h1, header p, header .subtitulo-horario, header .botones-contacto-header {
-        max-width: 750px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Ajustes restantes */
-      .sticky-bar{display:none}
-      .footer-logo{width:180px;height:100px;padding:8px}
-    }
-   /* --- UNIFICACIÓN DE BOTONES PARA MÓVIL Y PC (Añadir al final del CSS) --- */
+/* Forzamos a que todos los botones de la web midan lo mismo */
 .boton-cta {
   width: 100% !important;
-  max-width: 360px !important; /* Candado idéntico para que no se estiren */
+  max-width: 360px !important; /* Candado para que mantengan la misma simetría */
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
-   /* --- AJUSTE DE LA BARRA DE URGENCIA EN MÓVIL Y PC --- */
-.urgencia-bar {
-  width: auto !important;
-  max-width: 750px !important; /* Se frena en PC a la medida que querías */
-  margin: 15px 16px !important; /* El '16px' le da la separación perfecta a los lados en móvil */
-  padding: 12px 20px !important; /* Espacio cómodo por dentro para el texto */
-  border-radius: 12px !important; /* Bordes redondeados estéticos en ambas pantallas */
-}
 
-/* --- SOLUCIÓN DEFINITIVA PARA LA BARRA DE PLAZAS EN MÓVIL Y PC --- */
+/* Solución definitiva para la barra de urgencia flotante en móvil */
 .urgencia-bar {
   display: block !important;
-  width: 90% !important;        /* Fuerza a dejar espacio libre a los lados en móvil */
-  max-width: 750px !important;  /* En PC se frena en seco en su tamaño ideal */
-  margin-left: auto !important;  /* Centrado automático perfecto a la izquierda */
-  margin-right: auto !important; /* Centrado automático perfecto a la derecha */
+  width: 90% !important;
+  max-width: 750px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   margin-top: 15px !important;
   margin-bottom: 15px !important;
   padding: 12px 20px !important;
   border-radius: 12px !important;
-  box-sizing: border-box !important; /* Asegura que el relleno no estire la barra */
+  box-sizing: border-box !important;
 }
+
+
+/* 2. AJUSTES EXCLUSIVOS PARA PANTALLAS GRANDES (PC) */
+@media(min-width:700px) {
+  
+  /* Forzamos a que esta sección de cierre sea GRIS en PC y sus textos oscuros */
+  .seccion-oscura {
+    background-color: #f5f7fa !important;
+    padding: 60px 20px !important;
+  }
+  .seccion-oscura h2 {
+    color: #1a1a1a !important; /* Letras oscuras legibles sobre el fondo gris */
+    max-width: 750px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .seccion-oscura p {
+    color: #4a5568 !important;
+    max-width: 750px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Contenedor de los dos botones de abajo en paralelo (Dúo) */
+  .cta-duo {
+    max-width: 550px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    justify-content: center !important;
+  }
+  .cta-duo .boton-cta {
+    flex: 1 !important;
+    max-width: 260px !important; /* Se adaptan en fila de forma elegante */
+    margin: 0 !important;
+  }
+
+  /* Centrado de la barra de urgencia en ordenadores */
+  .urgencia-bar {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+ }
   
   </style>
 </head>
