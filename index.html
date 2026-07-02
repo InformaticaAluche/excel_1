@@ -222,8 +222,50 @@
       .testimonio-card{min-width:260px}
       .footer-logo{width:180px;height:100px;padding:8px}
     } */
-   @media(min-width:700px){
-      /* Las 3 tarjetas se abren bien a lo ancho en PC */
+
+@media(min-width:700px){
+      /* 1. Encapsulamos las secciones, el header y la barra de urgencia en PC */
+      header, .seccion-blanca, .seccion-gris, .urgencia-bar, footer {
+        max-width: 1024px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100%;
+      }
+
+      /* Evita que la barra de plazas limitadas o botones sueltos se estiren de lado a lado */
+      .urgencia-bar {
+        border-radius: 8px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .boton-cta {
+        max-width: 450px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* 2. Arreglo de testimonios para PC (en cuadrícula limpia) */
+      .testimonios-wrap {
+        max-width: 1024px;
+        margin: 0 auto !important;
+        padding: 0 20px;
+      }
+      .testimonios-wrap::after {
+        display: none;
+      }
+      .testimonios-scroll {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        overflow-x: visible;
+        padding: 20px 0;
+      }
+      .testimonio-card {
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      /* 3. Las 3 tarjetas de los cursos en fila */
       .tarjetas{
         flex-direction:row;
         max-width: 1024px;
@@ -232,13 +274,13 @@
       .tarjeta{flex:1}
       .tarjeta img{height:180px}
       
-      /* Evitamos que los textos y formularios se estiren infinitamente */
+      /* 4. Textos y formularios acotados */
       .contenedor-interno {
         max-width: 750px;
         margin: 0 auto;
       }
 
-      /* Centramos y limitamos el texto del encabezado */
+      /* 5. Contenido del encabezado centrado */
       header {
         padding: 50px 20px;
       }
@@ -248,12 +290,11 @@
         margin-right: auto;
       }
 
-      /* Ajustes de diseño para pantallas grandes */
+      /* Ajustes restantes */
       .sticky-bar{display:none}
       footer{padding-bottom:40px}
       .cta-duo{flex-direction:row}
-      .cta-duo .boton-cta{flex:1}
-      .testimonio-card{min-width:260px}
+      .cta-duo .boton-cta{flex:1; max-width: 100%;}
       .footer-logo{width:180px;height:100px;padding:8px}
     }
   
