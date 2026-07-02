@@ -210,18 +210,14 @@
     .toast-social{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#1a1a2e;color:#fff;padding:10px 20px;border-radius:30px;font-size:.8rem;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .4s,transform .4s;z-index:999;pointer-events:none;white-space:nowrap}
     .toast-social.mostrar{opacity:1;transform:translateX(-50%) translateY(0)}
 
-   /* @media(min-width:700px){
-      .tarjetas{flex-direction:row}
-      .tarjeta{flex:1}
-      .tarjeta img{height:180px}
-      .sticky-bar{display:none}
-      footer{padding-bottom:40px}
-      header{padding:44px 40px 34px}
-      .cta-duo{flex-direction:row}
-      .cta-duo .boton-cta{flex:1}
-      .testimonio-card{min-width:260px}
-      .footer-logo{width:180px;height:100px;padding:8px}
-    } */
+/* --- AJUSTE DEFINITIVO DE IMÁGENES (Añadir fuera del bloque final) --- */
+.tarjeta img {
+  width: 100% !important; /* Que ocupe todo el ancho de la tarjeta */
+  height: 200px !important; /* Una altura fija para que todas sean iguales */
+  object-fit: contain !important; /* ¡ESTA ES LA CLAVE! Muestra la imagen entera sin recortarla */
+  object-position: center !important; /* Centra la imagen en su espacio */
+  background-color: #f5f7fa !important; /* Un fondo gris clarito para rellenar si es necesario */
+}
 
 /* ==========================================================================
    CÓDIGO INTEGRAL BLINDADO: MARCO GRIS PC, BOTONES, URGENCIA Y SECUENCIA
