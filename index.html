@@ -364,7 +364,16 @@
 
 /* --- B) AJUSTES EXCLUSIVOS PARA PANTALLAS GRANDES (PC) --- */
 @media(min-width:700px) {
-  
+ 
+/* --- AJUSTE DE LA BARRA FLOTANTE FIJA EN PC --- */
+  .sticky-bar {
+    max-width: 1024px !important;           /* Se acopla al ancho de tu web */
+    left: 50% !important;                   /* Centrado absoluto */
+    transform: translateX(-50%) !important; /* Ajuste de centrado perfecto */
+    border-radius: 12px 12px 0 0 !important; /* Esquinas superiores redondeadas */
+  }
+
+ 
   /* Activamos el marco recogido con los laterales gris compacto (#c8c9cc) */
   html {
     background-color: #c8c9cc !important;
