@@ -243,10 +243,27 @@
         width: 100%;
       }
 
-      /* CORRECCIÓN DE SECUENCIA: Evita que el footer y la sección oscura se fusionen de golpe */
+      /* SOLUCIÓN: Forzamos a que esta sección final sea GRIS en PC y que sus textos sean oscuros */
+      .seccion-oscura {
+        background-color: #f5f7fa !important; /* Le damos el fondo gris limpio */
+        padding: 60px 20px !important;
+      }
+      .seccion-oscura h2 {
+        color: #1a1a1a !important; /* Texto principal casi negro para que contraste con el gris */
+        max-width: 750px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .seccion-oscura p {
+        color: #4a5568 !important; /* Subtítulo gris oscuro, súper legible */
+        max-width: 750px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Mantenemos el footer en su color oscuro nativo para que contrasten tus textos blancos */
       footer {
-        background-color: #f5f7fa !important; /* Pasamos el footer a un gris muy limpio para que no sea otro bloque negro pegado */
-        border-top: 1px solid #e1e2e6;
+        padding-bottom: 40px;
       }
 
       /* Ajustamos la barra de plazas limitadas (urgencia) para que quede equilibrada */
@@ -254,13 +271,6 @@
         max-width: 750px;
         margin: 20px auto !important;
         border-radius: 12px;
-      }
-      
-      /* Forzamos a que cualquier párrafo o título dentro de la sección oscura final no se estire */
-      .seccion-oscura h2, .seccion-oscura p {
-        max-width: 750px;
-        margin-left: auto !important;
-        margin-right: auto !important;
       }
 
       /* Controlamos el ancho de los botones individuales en PC */
@@ -333,7 +343,6 @@
 
       /* Ajustes restantes */
       .sticky-bar{display:none}
-      footer{padding-bottom:40px}
       .footer-logo{width:180px;height:100px;padding:8px}
     }
   
