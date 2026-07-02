@@ -224,20 +224,29 @@
     } */
 
 @media(min-width:700px){
-      /* 1. Encapsulamos las secciones, el header y la barra de urgencia en PC */
-      header, .seccion-blanca, .seccion-gris, .urgencia-bar, footer {
+      /* 1. Encapsulamos las secciones principales, el header y el footer en PC */
+      header, .seccion-blanca, .seccion-gris, .seccion-oscura, footer {
         max-width: 1024px;
         margin-left: auto !important;
         margin-right: auto !important;
         width: 100%;
       }
 
-      /* Evita que la barra de plazas limitadas o botones sueltos se estiren de lado a lado */
+      /* Ajustamos la barra de plazas limitadas (urgencia) para que quede equilibrada */
       .urgencia-bar {
-        border-radius: 8px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        max-width: 750px;
+        margin: 20px auto !important;
+        border-radius: 12px;
       }
+      
+      /* Forzamos a que cualquier párrafo o título dentro de la sección oscura final no se estire */
+      .seccion-oscura h2, .seccion-oscura p, .seccion-oscura .boton-cta {
+        max-width: 750px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Controlamos el ancho de los botones individuales en PC */
       .boton-cta {
         max-width: 450px;
         margin-left: auto !important;
