@@ -224,37 +224,37 @@
     } */
 
 /* ==========================================================================
-   CÓDIGO DEFINITIVO UNIFICADO: SECUENCIA DE COLORES, BOTONES Y URGENCIA
+   CÓDIGO INTEGRAL BLINDADO: MARCO GRIS PC, BOTONES, URGENCIA Y SECUENCIA
    ========================================================================== */
 
-/* 1. SECCIÓN FINAL: Sincronizada con el gris de la secuencia de la web */
+/* 1. SECCIÓN FINAL: Gris en móvil y PC para que contraste con el footer negro */
 .seccion-oscura {
-  background-color: #f5f7fa !important; /* <--- Cámbialo por el código de tu .seccion-gris si usas otro (ej. #f3f4f6) */
+  background-color: #f5f7fa !important;
   padding: 50px 20px !important;
 }
 .seccion-oscura h2 {
-  color: #1a1a1a !important; /* Texto oscuro para que contraste sobre el gris */
+  color: #1a1a1a !important;
   max-width: 750px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 .seccion-oscura p {
-  color: #4a5568 !important; /* Subtítulo legible */
+  color: #4a5568 !important;
   max-width: 750px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-/* 2. BOTONES: Mismo ancho simétrico en todas las pantallas (Móvil y PC) */
+/* 2. BOTONES GENERALES: Ancho simétrico */
 .boton-cta {
   width: 100% !important;
-  max-width: 360px !important; /* Candado idéntico para todos los botones sueltos */
+  max-width: 360px !important;
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-/* 3. URGENCIA: Tarjeta flotante despegada de los bordes en móvil */
+/* 3. URGENCIA GENERAL: Tarjeta despegada en móvil */
 .urgencia-bar {
   display: block !important;
   width: 90% !important;
@@ -268,8 +268,29 @@
   box-sizing: border-box !important;
 }
 
-/* 4. AJUSTES EXCLUSIVOS DE DISTRIBUCIÓN EN PC */
+
+/* 4. REGLAS EXCLUSIVAS PARA ORDENADORES (PC) */
 @media(min-width:700px) {
+  
+  /* RECONSTRUCCIÓN DEL MARCO RECOGIDO (Lo que hacía que se viera de lado a lado) */
+  html {
+    background-color: #c8c9cc !important; /* Tu gris elegido para los laterales */
+  }
+  body {
+    background-color: #ffffff !important; /* Cuerpo central blanco */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15) !important; /* Sombra elegante */
+    max-width: 1024px !important; /* Candado para que no se estire la web */
+    margin: 0 auto !important; /* Centra la web en monitores grandes */
+  }
+
+  /* Encapsulamos todas las secciones principales para que respeten el ancho */
+  header, .seccion-blanca, .seccion-gris, .seccion-oscura, footer {
+    max-width: 1024px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+
   /* Contenedor de los dos botones de abajo en paralelo (Dúo) */
   .cta-duo {
     max-width: 550px !important;
@@ -282,17 +303,16 @@
   }
   .cta-duo .boton-cta {
     flex: 1 !important;
-    max-width: 260px !important; /* Se adaptan en fila solo en pantallas grandes */
+    max-width: 260px !important;
     margin: 0 !important;
   }
 
-  /* Centrado total de la barra de urgencia en ordenadores */
+  /* Ajustes de espaciados en PC */
   .urgencia-bar {
     margin-top: 20px !important;
     margin-bottom: 20px !important;
     width: 100% !important;
   }
-  
   .seccion-oscura {
     padding: 60px 20px !important;
   }
