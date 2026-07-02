@@ -240,17 +240,32 @@
       }
       
       /* Forzamos a que cualquier párrafo o título dentro de la sección oscura final no se estire */
-      .seccion-oscura h2, .seccion-oscura p, .seccion-oscura .boton-cta {
+      .seccion-oscura h2, .seccion-oscura p {
         max-width: 750px;
         margin-left: auto !important;
         margin-right: auto !important;
       }
 
-      /* Controlamos el ancho de los botones individuales en PC */
+      /* CORRECCIÓN: Controlamos el ancho de los botones individuales en PC */
       .boton-cta {
-        max-width: 450px;
+        max-width: 350px; /* Reducimos el ancho para que queden más estéticos y equilibrados */
         margin-left: auto !important;
         margin-right: auto !important;
+      }
+
+      /* SOLUCIÓN AL BOTÓN DUO FINAL: Evita que el contenedor de los dos botones de abajo se desparrame */
+      .cta-duo {
+        max-width: 550px; /* Acota el ancho del conjunto de los dos botones */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+      }
+      .cta-duo .boton-cta {
+        flex: 1;
+        max-width: 100%; /* Permite que se repartan el espacio del contenedor de 550px a la mitad */
+        margin: 0 !important;
       }
 
       /* 2. Arreglo de testimonios para PC (en cuadrícula limpia) */
@@ -302,8 +317,6 @@
       /* Ajustes restantes */
       .sticky-bar{display:none}
       footer{padding-bottom:40px}
-      .cta-duo{flex-direction:row}
-      .cta-duo .boton-cta{flex:1; max-width: 100%;}
       .footer-logo{width:180px;height:100px;padding:8px}
     }
   
