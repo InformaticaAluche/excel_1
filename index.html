@@ -362,10 +362,18 @@
   border-radius: 12px !important; /* Bordes redondeados estéticos en ambas pantallas */
 }
 
-@media(min-width:700px) {
-  .urgencia-bar {
-    margin: 20px auto !important; /* En PC se vuelve a centrar automáticamente */
-  }
+/* --- SOLUCIÓN DEFINITIVA PARA LA BARRA DE PLAZAS EN MÓVIL Y PC --- */
+.urgencia-bar {
+  display: block !important;
+  width: 90% !important;        /* Fuerza a dejar espacio libre a los lados en móvil */
+  max-width: 750px !important;  /* En PC se frena en seco en su tamaño ideal */
+  margin-left: auto !important;  /* Centrado automático perfecto a la izquierda */
+  margin-right: auto !important; /* Centrado automático perfecto a la derecha */
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  padding: 12px 20px !important;
+  border-radius: 12px !important;
+  box-sizing: border-box !important; /* Asegura que el relleno no estire la barra */
 }
   
   </style>
