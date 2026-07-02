@@ -353,6 +353,20 @@
   margin-left: auto !important;
   margin-right: auto !important;
 }
+   /* --- AJUSTE DE LA BARRA DE URGENCIA EN MÓVIL Y PC --- */
+.urgencia-bar {
+  width: auto !important;
+  max-width: 750px !important; /* Se frena en PC a la medida que querías */
+  margin: 15px 16px !important; /* El '16px' le da la separación perfecta a los lados en móvil */
+  padding: 12px 20px !important; /* Espacio cómodo por dentro para el texto */
+  border-radius: 12px !important; /* Bordes redondeados estéticos en ambas pantallas */
+}
+
+@media(min-width:700px) {
+  .urgencia-bar {
+    margin: 20px auto !important; /* En PC se vuelve a centrar automáticamente */
+  }
+}
   
   </style>
 </head>
