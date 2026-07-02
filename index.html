@@ -243,25 +243,25 @@
         width: 100%;
       }
 
-      /* SOLUCIÓN: Forzamos a que esta sección final sea GRIS en PC y que sus textos sean oscuros */
+      /* Forzamos a que esta sección final sea GRIS en PC y que sus textos sean oscuros */
       .seccion-oscura {
-        background-color: #f5f7fa !important; /* Le damos el fondo gris limpio */
+        background-color: #f5f7fa !important;
         padding: 60px 20px !important;
       }
       .seccion-oscura h2 {
-        color: #1a1a1a !important; /* Texto principal casi negro para que contraste con el gris */
+        color: #1a1a1a !important;
         max-width: 750px;
         margin-left: auto !important;
         margin-right: auto !important;
       }
       .seccion-oscura p {
-        color: #4a5568 !important; /* Subtítulo gris oscuro, súper legible */
+        color: #4a5568 !important;
         max-width: 750px;
         margin-left: auto !important;
         margin-right: auto !important;
       }
 
-      /* Mantenemos el footer en su color oscuro nativo para que contrasten tus textos blancos */
+      /* Mantenemos el footer en su color oscuro nativo */
       footer {
         padding-bottom: 40px;
       }
@@ -273,14 +273,13 @@
         border-radius: 12px;
       }
 
-      /* Controlamos el ancho de los botones individuales en PC */
+      /* UNIFICACIÓN DE BOTONES EN PC: Forzamos el ancho exacto e idéntico */
       .boton-cta {
-        max-width: 350px;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        max-width: 360px !important; /* <--- Candado de 360px para todos los botones sueltos en PC */
+        width: 100% !important;
       }
 
-      /* Evita que el contenedor de los dos botones de abajo se desparrame */
+      /* Contenedor de los dos botones de abajo (Dúo) */
       .cta-duo {
         max-width: 550px;
         margin-left: auto !important;
@@ -288,10 +287,11 @@
         display: flex;
         flex-direction: row;
         gap: 16px;
+        justify-content: center;
       }
       .cta-duo .boton-cta {
         flex: 1;
-        max-width: 100%;
+        max-width: 260px !important; /* En formato dúo se adaptan para ir en la misma línea sin romperse */
         margin: 0 !important;
       }
 
@@ -345,6 +345,14 @@
       .sticky-bar{display:none}
       .footer-logo{width:180px;height:100px;padding:8px}
     }
+   /* --- UNIFICACIÓN DE BOTONES PARA MÓVIL Y PC (Añadir al final del CSS) --- */
+.boton-cta {
+  width: 100% !important;
+  max-width: 360px !important; /* Candado idéntico para que no se estiren */
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
   
   </style>
 </head>
